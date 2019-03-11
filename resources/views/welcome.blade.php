@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Druga Ruka Shop
                 </div>
 
                 <div class="links">
