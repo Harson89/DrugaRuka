@@ -22,10 +22,10 @@ class CreateOrdersTable extends Migration
             $table->double('orderPrice');
             $table->boolean('finished');
 
-            //userID
+            /*userID
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('User');
-
+            */
 
         });
     }
