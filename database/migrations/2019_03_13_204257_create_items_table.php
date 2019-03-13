@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSupportsTable extends Migration
+class CreateItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,14 @@ class CreateSupportsTable extends Migration
      */
     public function up()
     {
-        Schema::create('supports', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('message');
-            $table->string('email');
-            $table->string('firstName');
-            $table->string('lastName');
-
+            $table->string('name');
+            $table->string('description');
+            $table->double('price');
+            $table->string('picture');
             
-            $table->integer('user_id')->unsigned();
-
-            $table->foreign('user_id')->references('id')->on('users');
-
-
         });
     }
 
@@ -37,6 +31,6 @@ class CreateSupportsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('supports');
+        Schema::dropIfExists('items');
     }
 }
