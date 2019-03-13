@@ -15,4 +15,8 @@ class sizes_item extends Model
         return $this->belongsTo(item::class);
     }
 
+    public function orders_sizes_item() {
+        return $this->hasMany(orders_sizes_item::class);
+    }
+
 }
