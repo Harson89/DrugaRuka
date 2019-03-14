@@ -23,7 +23,6 @@ class CreateSizesItemsTable extends Migration
             //FOREIGN KEY from items
             $table->integer('item_id')->unsigned();
             $table->foreign('item_id')->references('id')->on('items');
-
         });
     }
 

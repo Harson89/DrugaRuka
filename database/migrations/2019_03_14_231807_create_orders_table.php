@@ -25,7 +25,6 @@ class CreateOrdersTable extends Migration
             //Foreign key from users
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-
         });
     }
 

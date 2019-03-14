@@ -10,10 +10,6 @@ class item extends Model
         return $this->hasMany(sizes_item::class);
     }
 
-   /* public function category_subcategory(){
-        return $this->belongsTo(category_subcategory::class);
-    }
-   */
 
    public function category(){
        return $this->belongsTo(category::class);

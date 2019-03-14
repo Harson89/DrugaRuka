@@ -18,7 +18,6 @@ class CreateSizesTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->integer('quantity');
-
         });
     }
 
