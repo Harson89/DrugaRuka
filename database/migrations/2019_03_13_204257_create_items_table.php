@@ -26,6 +26,10 @@ class CreateItemsTable extends Migration
             //$table->foreign('cs_id')->references('id')->on('category_subcategories');
 
 
+               //FOREIGN key from category_subcategory
+            //$table->integer('category_id')->unsigned();
+            //$table->foreign('category_id')->references('id')->on('categories');
+
         });
     }
 
