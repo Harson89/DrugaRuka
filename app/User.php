@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
@@ -36,4 +37,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function support(){
+        return $this->hasMany(support::class);
+    }
+
+    public function order(){
+        return $this->hasMany(order::class);
+    }
+
+   
 }
