@@ -28,9 +28,16 @@
 </div>
 
 <div id="usredini">
-{!! Form::open(['url' => '/additemExecute']) !!}
+    <!--FORM -->
+    <form action="{{ URL::to('additemExecute') }}" method="post" enctype="multipart/form-data">
+
+
+    {{ csrf_field() }}
+
+    <!-- product name -->
     {{Form::text('itemName','', ['required'=>'required','class' => 'text-center form-control', 'placeholder'=>'Item Name'])}}
 
+    <!-- description -->
     {{Form::textarea('description','', ['required'=>'required','class' => 'text-center form-control', 'placeholder'=>'Description', 'rows'=>'3', 'cols'=>'2'] )}}
 
     <!-- CATEGORY ID -->
@@ -40,7 +47,7 @@
         @endforeach
     </select>
 
-
+    <!-- price -->
     {!! Form::number('price', '0.0', ['required'=>'required','min' => '0.01', 'step'=>'any', 'class' => 'text-center form-control','id'=> 'inputPrice']) !!}
     <br>
 
@@ -52,9 +59,14 @@
             <option value=4 > kids </option>
     </select>
 
-    {{Form::file('user_photo')}}
+    <!-- picture upload -->
+    <div class="form-control">
+        <label for="author">Picture:</label>
+        <input type="file" name="file" id="file">
+    </div>
     <br>
 
+    <!-- submit -->
     {{Form::submit('send',['class'=>'btn btn-primary'])}}
 {!! Form::close() !!}
 </div>

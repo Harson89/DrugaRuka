@@ -17,17 +17,22 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//basic routes
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/about', 'AboutController@about')->name('about');
 
-Route::get('/myProfile', 'myProfileController@index');
+//prikaz samo jednog produkta
+Route::get('product/{item_id}','productController@showById');
 
+//Moj profil
 Route::get('/addItem', 'myProfileController@addItem');
+Route::get('/myProfile', 'myProfileController@index');
+Route::post('additemExecute', 'myProfileController@addItemExecute');
 
 
+//Route::get('kategorije/{category_id}', 'categoriesController@show');
 
-Route::post('/additemExecute', 'myProfileController@addItemExecute');
+
 //Rute za ispis gender stranica
 Route::get('/male', 'GenderController@male')->name('male');
 Route::get('/female', 'GenderController@female')->name('female');
