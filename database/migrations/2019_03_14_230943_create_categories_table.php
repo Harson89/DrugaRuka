@@ -18,6 +18,12 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('description');
+            $table->integer('gender')->default(1);
+
+            //unisex = 1
+            //male = 2
+            //female = 3
+            //kids = 4
         });
     }
 

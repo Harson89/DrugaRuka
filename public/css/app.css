@@ -10676,6 +10676,18 @@ a.text-dark:focus {
   color: white;
 }
 
+#usredini {
+  text-align: center;
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
+#inputPrice {
+  width: 25%;
+  text-align: center;
+  display: inline-block;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

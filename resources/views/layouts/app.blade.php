@@ -50,7 +50,7 @@
 
 
           <li class="nav-item">
-                <a class="nav-link" href="#">My Profile</a>
+                <a class="nav-link" href="/myProfile">My Profile</a>
           </li>
 
           <!-- SHOPPING CART -->
