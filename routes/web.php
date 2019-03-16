@@ -24,10 +24,6 @@ Route::get('/about', 'AboutController@about')->name('about');
 //prikaz samo jednog produkta
 Route::get('product/{item_id}','productController@showById');
 
-//Moj profil
-Route::get('/addItem', 'myProfileController@addItem');
-Route::get('/myProfile', 'myProfileController@index');
-Route::post('additemExecute', 'myProfileController@addItemExecute');
 
 
 //Route::get('kategorije/{category_id}', 'categoriesController@show');
@@ -39,4 +35,8 @@ Route::get('/female', 'GenderController@female')->name('female');
 Route::get('/child', 'GenderController@child')->name('child');
 Route::get('/unisex', 'GenderController@unisex')->name('unisex');
 
-
+//My profile controller
+Route::get('/editInfo','myProfileController@editInfo')->name('editInfo');
+Route::get('/addItem', 'myProfileController@addItem');
+Route::get('/myProfile', 'myProfileController@index');
+Route::post('additemExecute', 'myProfileController@addItemExecute');

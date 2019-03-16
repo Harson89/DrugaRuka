@@ -40,4 +40,12 @@ class myProfileController extends Controller
 
     }
 
+    //Funkcija za ispis editInfo page-a
+    public function editInfo()
+    {
+        return view('myProfile.editInfo');
+    }
+
+    //Funkcija za update licnih podataka
+
 }
