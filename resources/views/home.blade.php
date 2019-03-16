@@ -1,66 +1,54 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-      <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Druga Ruka</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          @if(Auth::guest())
-
-          <!-- LOGIN -->
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('login') }}">Login</a>
-          </li>
-
-          <!-- LOGIN -->
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('register') }}">Register</a>
-          </li>
-
-          @else
-
-          <!-- LOGOUT -->
-            <li class="nav-item">
-                <a
-                    class="nav-link"
-                    href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-                    Logout
-                </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                </form>
-
-            </li>
-        @endif
-        </ul>
-      </div>
-    </div>
-  </nav>
+@extends('layouts.pocetna')
 
 
+@section('categories')
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-</div>
+
+      <a href="#" class="list-group-item">Male</a>
+      <a href="#" class="list-group-item">Female</a>
+      <a href="#" class="list-group-item">Unisex</a>
+      <a href="#" class="list-group-item">Kids</a>
+
+
 @endsection
+
+
+@section('items')
+
+<div class="col-lg-9">
+
+
+
+    <div class="row">
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a class="nazivItema" href="#">Item One</a>
+            </h4>
+
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+          </div>
+          <div class="card-footer">
+                <h5 class="cijena">$24.99</h5>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+  </div>
+@endsection
+
+
