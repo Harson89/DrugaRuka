@@ -21,6 +21,13 @@ class CreateItemsTable extends Migration
             $table->double('price');
             $table->string('picture');
 
+            //spol
+            $table->integer('gender');
+            //unisex = 1
+            //male = 2
+            //female = 3
+            //kids = 4
+
             //FOREIGN key from category
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');

@@ -1,25 +1,22 @@
 @extends('layouts.pocetna')
 
 
-@section('categories')
-
-
-      <a href="#" class="list-group-item">Male</a>
-      <a href="#" class="list-group-item">Female</a>
-      <a href="#" class="list-group-item">Unisex</a>
-      <a href="#" class="list-group-item">Kids</a>
-
-
-@endsection
 
 
 @section('items')
 
-<div class="col-lg-9">
+<div class="col-lg-12">
 
 
 
     <div class="row">
+
+
+
+
+
+
+
 
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-100">
@@ -37,12 +34,6 @@
           </div>
         </div>
       </div>
-
-
-
-
-
-
 
 
 

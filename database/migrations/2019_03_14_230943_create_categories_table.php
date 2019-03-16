@@ -20,6 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->string('description');
             $table->integer('gender')->default(1);
 
+            //all = 0
             //unisex = 1
             //male = 2
             //female = 3
