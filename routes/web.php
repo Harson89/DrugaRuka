@@ -17,9 +17,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//basic routes
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/about', 'AboutController@about')->name('about');
+
+//prikaz samo jednog produkta
+Route::get('product/{item_id}','productController@showById');
+
+
+
+//Route::get('kategorije/{category_id}', 'categoriesController@show');
 
 
 //Rute za ispis gender stranica

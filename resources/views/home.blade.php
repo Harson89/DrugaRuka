@@ -20,7 +20,7 @@
 
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="{{$item->picture}}" alt=""></a>
+                <a href="/product/{{$item->id}}"><img class="card-img-top" src="images\{{$item->picture}}" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <a  href="#">{{$item->name}}</a>
@@ -41,7 +41,7 @@
 
         @endforeach
         @else
-        <p> empty </p>
+        <p> No products yet </p>
         @endif
 
 
