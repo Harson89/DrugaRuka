@@ -7,33 +7,49 @@
 
 <div class="col-lg-12">
 
+    <?php
+        $items = App\item::all();
+    ?>
 
 
     <div class="row">
 
+        @if(count($items)>0)
+        @foreach($items as $item)
 
 
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="{{$item->picture}}" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a  href="#">{{$item->name}}</a>
+                </h4>
 
 
+              </div>
 
-
-
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a  href="#">Item One</a>
-            </h4>
-
-
+              <div class="card-footer">
+                    <h5 class="cijena">{{$item->price}}€</h5>
+              </div>
+            </div>
           </div>
 
-          <div class="card-footer">
-                <h5 class="cijena">$24.99</h5>
-          </div>
-        </div>
-      </div>
+        <br>
+        <br>
+
+
+        @endforeach
+        @else
+        <p> empty </p>
+        @endif
+
+
+
+
+
+
+
 
 
 

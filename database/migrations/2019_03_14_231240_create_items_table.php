@@ -22,7 +22,7 @@ class CreateItemsTable extends Migration
             $table->string('picture');
 
             //spol
-            $table->integer('gender');
+            $table->integer('gender')->default(1);
             //unisex = 1
             //male = 2
             //female = 3
