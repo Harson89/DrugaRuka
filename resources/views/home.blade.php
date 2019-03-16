@@ -52,4 +52,9 @@
   </div>
 @endsection
 
+<!--Ubaci dropdown menu za spolove-->
+@section('Dropdown')
 
+@include('layouts.DropdownMenuSpol')
+
+@endsection

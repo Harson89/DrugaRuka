@@ -28,3 +28,10 @@ Route::get('/addItem', 'myProfileController@addItem');
 
 
 Route::post('/additemExecute', 'myProfileController@addItemExecute');
+//Rute za ispis gender stranica
+Route::get('/male', 'GenderController@male')->name('male');
+Route::get('/female', 'GenderController@female')->name('female');
+Route::get('/child', 'GenderController@child')->name('child');
+Route::get('/unisex', 'GenderController@unisex')->name('unisex');
+
+
