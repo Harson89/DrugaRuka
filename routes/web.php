@@ -21,11 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/about', 'AboutController@about')->name('about');
 
-Route::get('/myProfile', 'myProfileController@index');
-
-Route::get('/addItem', 'myProfileController@addItem');
-
-
 
 Route::post('/additemExecute', 'myProfileController@addItemExecute');
 //Rute za ispis gender stranica
@@ -34,4 +29,8 @@ Route::get('/female', 'GenderController@female')->name('female');
 Route::get('/child', 'GenderController@child')->name('child');
 Route::get('/unisex', 'GenderController@unisex')->name('unisex');
 
+//My profile controller
+Route::get('/editInfo','myProfileController@editInfo')->name('editInfo');
+Route::get('/addItem', 'myProfileController@addItem');
+Route::get('/myProfile', 'myProfileController@index');
 
