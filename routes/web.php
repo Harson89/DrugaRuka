@@ -20,3 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/about', 'AboutController@about')->name('about');
+
+//Rute za ispis gender stranica
+Route::get('/male', 'GenderController@male')->name('male');
+Route::get('/female', 'GenderController@female')->name('female');
+Route::get('/child', 'GenderController@child')->name('child');
+Route::get('/unisex', 'GenderController@unisex')->name('unisex');
+
+
