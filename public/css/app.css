@@ -10663,7 +10663,7 @@ a.text-dark:focus {
   text-align: center;
 }
 
-.nazivItema {
+.card-title {
   text-align: center;
 }
 
@@ -10671,8 +10671,9 @@ a.text-dark:focus {
   text-align: center;
 }
 
-.list-group a {
-  text-decoration: none;
+.card-body:hover {
+  background-color: #778899;
+  color: white;
 }
 
 .navbar-laravel {
