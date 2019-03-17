@@ -14,7 +14,7 @@ $stariPassword = Auth::User()->password;
 
 <div id="usredini">
 <br>
-<h1> Unesite nove podatke </h1>
+<h1> Promjeni password </h1>
 
 {{ Form::open(array('url' => '/changePassword')) }}
 <br> <br> <br>

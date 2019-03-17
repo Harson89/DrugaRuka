@@ -46,4 +46,6 @@ Route::post('/additemExecute', 'myProfileController@addItemExecute');
 
 Route::post('/changePassword', 'myProfileController@changePassword');
 
+Route::get('/changeEmailPage','myProfileController@changeEmailPage');
 
+Route::post('/changeEmail', 'myProfileController@changeEmail');
