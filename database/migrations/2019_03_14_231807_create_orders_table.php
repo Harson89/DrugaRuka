@@ -20,7 +20,11 @@ class CreateOrdersTable extends Migration
             $table->string('city');
             $table->integer('zip');
             $table->double('price');
-            $table->integer('finished')->default(0);
+            $table->integer('finished')->default(1);
+
+            //finished
+                //0 = zavrsen
+                //1 = u toku
 
             //Foreign key from users
             $table->integer('user_id')->unsigned();

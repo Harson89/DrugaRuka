@@ -46,11 +46,12 @@
             <option value ={{$category->id}}> {{$category->name}} </option>
         @endforeach
     </select>
-
-    <!-- price -->
-    {!! Form::number('price', '0.0', ['required'=>'required','min' => '0.01', 'step'=>'any', 'class' => 'text-center form-control','id'=> 'inputPrice']) !!}
     <br>
-
+    <!-- price -->
+    <span> Price </span>
+    {!! Form::number('price', '0.0', ['required'=>'required','min' => '0.01', 'step'=>'any', 'class' => 'text-center form-control']) !!}
+    <br>
+    <br>
     <!-- GENDER -->
     <select class="form-control" name="gender">
             <option value=1 > unisex </option>
@@ -58,6 +59,44 @@
             <option value=3 > female </option>
             <option value=4 > kids </option>
     </select>
+
+    <br>
+
+    <!-- XXXL -->
+        <span> XXXL QUANTITY </span>
+        {{ Form::input('number', 'quantityXXXL', '0', ['class' => 'form-control']) }}
+        <br>
+
+    <!-- XXL -->
+    <span> XXL QUANTITY </span>
+    {{ Form::input('number', 'quantityXXL', '0', ['class' => 'form-control']) }}
+    <br>
+
+    <!-- XL -->
+    <span> XL QUANTITY </span>
+    {{ Form::input('number', 'quantityXL', '0', ['class' => 'form-control']) }}
+    <br>
+
+    <!-- L -->
+    <span> L QUANTITY </span>
+    {{ Form::input('number', 'quantityL', '0', ['class' => 'form-control']) }}
+    <br>
+
+    <!-- M -->
+    <span> M QUANTITY </span>
+    {{ Form::input('number', 'quantityM', '0', ['class' => 'form-control']) }}
+    <br>
+
+    <!-- S -->
+    <span> S QUANTITY </span>
+    {{ Form::input('number', 'quantityS', '0', ['class' => 'form-control']) }}
+    <br>
+
+    <!-- XS -->
+    <span> XS QUANTITY </span>
+    {{ Form::input('number', 'quantityXS', '0', ['class' => 'form-control']) }}
+    <br>
+
 
     <!-- picture upload -->
     <div class="form-control">

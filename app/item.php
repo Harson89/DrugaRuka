@@ -14,4 +14,9 @@ class item extends Model
    public function category(){
        return $this->belongsTo(category::class);
    }
+
+   //connnection to ORDER_ITEMS
+   public function orders_item() {
+    return $this->hasMany(orders_item::class);
+    }
 }

@@ -16,7 +16,7 @@ class myProfileController extends Controller
         return view('myProfile.home');
     }
 
-    
+
     public function addItem(){
         return view('myProfile.addItem');
     }
@@ -29,6 +29,16 @@ class myProfileController extends Controller
         $item->price = $request->input('price');
         $item->gender = $request->input('gender');
         $item->picture = $request->file('file')->getClientOriginalName();
+
+        //kolicina velicina
+        $item->XXXLQuantity = $request->input('quantityXXXL');
+        $item->XXLQuantity = $request->input('quantityXXL');
+        $item->XLQuantity = $request->input('quantityXL');
+        $item->LQuantity = $request->input('quantityL');
+        $item->MQuantity = $request->input('quantityM');
+        $item->SQuantity = $request->input('quantityS');
+        $item->XSQuantity = $request->input('quantityXS');
+
 
         //stavi sliku u folder
         if(Input::hasFile('file')){
@@ -50,7 +60,7 @@ class myProfileController extends Controller
       {
           return view('myProfile.editInfo');
       }
-  
+
       //Funkcija za update passworda
       public function changePassword(Request $request)
       {
@@ -60,29 +70,29 @@ class myProfileController extends Controller
               'noviPassword' => 'required|min:6',
               'confirmPassword' => 'required|min:6'
           ]);
-  
+
           // PROVJERA DA LI UNIO PRAVILNU STARU SIFRU
           if(!(Hash::check($request->get('stariPassword'),Auth::user()->password))) {
               return redirect()->back()->with("error", "Molim unesite tačnu trenutnu lozinku");
           }
-  
+
             //PROVJERA DA LI JE NOVA SIFRA ISTA KAO STARA SIFRA
             if(strcmp($request->get('stariPassword'), $request->get('noviPassword')) == 0 ){
               return redirect()->back()->with("error", "Nova lozinka ne moze biti ista kao stara lozinka");
           }
-  
+
            //PROVJERA DA LI JE PRAVILNO POTVRDNO UPISAO SIFRE
            if(($request->get('noviPassword')) != ($request->get('confirmPassword'))){
               return redirect()->back()->with("error","Pravilno upisite lozinke u polja novih lozinki");
           }
-  
-             // PROMJENA SIFRE 
+
+             // PROMJENA SIFRE
              $user = Auth::user();
              $user->password = bcrypt($request->get('noviPassword'));
              $user->save();
 
              return redirect('/home');
-  
+
       }
 
       //Funkcija za ispis editEmail page-a
@@ -98,7 +108,7 @@ class myProfileController extends Controller
           //PROVJERA DA LI JE UNIO SVE INFORMACIJE IZ FORME
           $this->validate($request,[
               'noviMail' => 'required',
-              'confirmMail' => 'required'           
+              'confirmMail' => 'required'
           ]);
 
           $stariMail = Auth::User()->email;

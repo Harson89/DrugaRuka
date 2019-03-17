@@ -24,6 +24,9 @@ Route::get('/about', 'AboutController@about')->name('about');
 //prikaz samo jednog produkta
 Route::get('product/{item_id}','productController@showById');
 
+//ADD TO CART
+Route::post('/addToCart', 'productController@addToCart');
+
 
 
 //Route::get('kategorije/{category_id}', 'categoriesController@show');
@@ -49,3 +52,4 @@ Route::post('/changePassword', 'myProfileController@changePassword');
 Route::get('/changeEmailPage','myProfileController@changeEmailPage');
 
 Route::post('/changeEmail', 'myProfileController@changeEmail');
+
