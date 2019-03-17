@@ -49,3 +49,14 @@ Route::post('/changePassword', 'myProfileController@changePassword');
 Route::get('/changeEmailPage','myProfileController@changeEmailPage');
 
 Route::post('/changeEmail', 'myProfileController@changeEmail');
+
+
+//ownerController rute
+
+Route::get('/ownerPage','ownerController@prikazOwnerPage');
+
+Route::get('/kategorijeOwner/{idKategorije}','ownerController@prikazKategorijeOwner');
+
+Route::get('/itemiKategorije/{imeTrenutneKategorije}','ownerController@prikazItemaKategorije');
+
+Route::get('/izbrisi/{zaIzbrisati}','ownerController@izbrisiItem');
