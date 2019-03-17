@@ -26,7 +26,6 @@
                   <a  href="#">{{$item->name}}</a>
                 </h4>
 
-
               </div>
 
               <div class="card-footer">

@@ -10688,6 +10688,31 @@ a.text-dark:focus {
   display: inline-block;
 }
 
+#desni {
+  width: 40%;
+  float: right;
+  margin-right: 10%;
+  padding-left: 4%;
+}
+
+#lijevi {
+  width: 40%;
+  float: left;
+  margin-left: 10%;
+}
+
+#slikaProdukta {
+  float: right;
+  width: 80%;
+  border: 3px solid black;
+}
+
+#imeProdukta {
+  text-align: center;
+  width: 100%;
+  font-size: 150%;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
