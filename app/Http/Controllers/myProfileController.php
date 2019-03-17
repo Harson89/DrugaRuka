@@ -16,6 +16,7 @@ class myProfileController extends Controller
         return view('myProfile.home');
     }
 
+    
     public function addItem(){
         return view('myProfile.addItem');
     }
@@ -50,7 +51,7 @@ class myProfileController extends Controller
           return view('myProfile.editInfo');
       }
   
-      //Funkcija za update licnih podataka
+      //Funkcija za update passworda
       public function changePassword(Request $request)
       {
           //PROVJERA DA LI JE UNIO SVE INFORMACIJE IZ FORME
@@ -82,6 +83,43 @@ class myProfileController extends Controller
 
              return redirect('/home');
   
+      }
+
+      //Funkcija za ispis editEmail page-a
+      public function changeEmailPage()
+      {
+          return view('myProfile.editEmail');
+      }
+
+
+      //Funkcija za promjenu maila
+      public function changeEmail(Request $request)
+      {
+          //PROVJERA DA LI JE UNIO SVE INFORMACIJE IZ FORME
+          $this->validate($request,[
+              'noviMail' => 'required',
+              'confirmMail' => 'required'           
+          ]);
+
+          $stariMail = Auth::User()->email;
+
+ //PROVJERA DA LI JE NOVI MAIL ISTI KAO PREDHODNI
+ if(strcmp($request->get($stariMail), $request->get('noviMail')) == 0 ){
+    return redirect()->back()->with("error", "Unijeli ste stari mail");
+}
+
+ //PROVJERA DA LI JE PRAVILNO POTVRDNO UPISAO MAILOVE
+ if(($request->get('noviMail')) != ($request->get('confirmMail'))){
+    return redirect()->back()->with("error","Pravilno upisite mailove u polja novih mailova");
+}
+
+  // PROMJENA MAILA
+  $user = Auth::user();
+  $user->email = ($request->get('noviMail'));
+  $user->save();
+
+  return redirect('/home');
+
       }
 
 }
