@@ -54,3 +54,18 @@ Route::get('/izbrisi/{zaIzbrisati}','ownerController@izbrisiItem');
 
 //Itemi po kategorijama za sve
 Route::get('/itemiKategorijeOpcenito/{itemiKategorije}','HomeController@itemiPoKategoriji');
+
+
+Route::get('/kategorijeOwner/{idKategorije}','ownerController@prikazKategorijeOwner');
+
+Route::get('/itemiKategorije/{imeTrenutneKategorije}','ownerController@prikazItemaKategorije');
+
+Route::get('/izbrisi/{zaIzbrisati}','ownerController@izbrisiItem');
+
+
+//cart routes
+Route::get('/myCart', 'cartController@index');
+
+Route::get('/buyAll', 'cartController@buyAll');
+
+Route::post('/buyAllExecute', 'cartController@buyAllExecute');

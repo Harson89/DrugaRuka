@@ -81,6 +81,8 @@
 
         <br>
 
+
+
         <span> Choose Quantity </span>
         {{ Form::input('number', 'quantity', '1', ['class' => 'form-control', 'min'=>1]) }}
 

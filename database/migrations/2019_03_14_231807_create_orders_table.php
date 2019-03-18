@@ -19,8 +19,11 @@ class CreateOrdersTable extends Migration
             $table->string('address');
             $table->string('city');
             $table->integer('zip');
-            $table->double('price');
+            $table->double('price')->default(0);
             $table->integer('finished')->default(1);
+            $table->string('shipped')->default('no');
+            $table->string('firstName');
+            $table->string('lastName');
 
             //finished
                 //0 = zavrsen

@@ -10713,6 +10713,16 @@ a.text-dark:focus {
   font-size: 150%;
 }
 
+#cartTable {
+  width: 70%;
+  margin-right: 15%;
+  margin-left: 15%;
+}
+
+#global {
+  text-align: center;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

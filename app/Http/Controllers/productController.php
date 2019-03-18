@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 
 class productController extends Controller
 {
+
+
     public function showById($item_id){
 
 
@@ -24,8 +26,11 @@ class productController extends Controller
 
         //$users = DB::table('users')->count();
 
-        //DA LI POSTOJI ORDER KOJI NIJE ZAVRSEN
+        // da li je user prijavljen
 
+        if($user = Auth::user()){
+
+        //DA LI POSTOJI ORDER KOJI NIJE ZAVRSEN
         $orderCount = DB::table('orders')->where([
             'user_id' => Auth::id(),
             'finished' => 1,
@@ -40,8 +45,10 @@ class productController extends Controller
             $order->address = 'test';
             $order->city = 'test';
             $order->zip = 1;
-            $order->price = 1;
+            $order->price = 0;
             $order->user_id = Auth::id();
+            $order->firstName= '';
+            $order->lastName= '';
             $order->save();
 
         }
@@ -56,6 +63,7 @@ class productController extends Controller
             $orderID = $oderID->id;
         }
 
+        $narudzba = order::find($orderID);
 
         //pokupit podatke sa forme
         $product_id = $request->input('product_id');
@@ -67,7 +75,6 @@ class productController extends Controller
         $orders_item->order_id = $orderID;
 
         //naruceni ITEM
-        // ->get();
         $artikal = item::find($product_id);
 
 
@@ -79,6 +86,11 @@ class productController extends Controller
 
             //da li ima dovoljno artikala te velicine
             if($artikal->XXXLQuantity >= $productQuantity){
+
+                //povecat sveukupnu cijenu ordera
+                $narudzba->price += ($artikal->price)*$productQuantity;
+                $narudzba->save();
+
 
                 //dodaje u korpu kolicinu itema koji su naruceni
                 $orders_item->quantityXXXL = $productQuantity;
@@ -224,6 +236,13 @@ class productController extends Controller
             }
 
         }
+
+        //povecat sveukupnu cijenu
+
+
+    } else {
+        $message= "You must be registered to add items to cart";
+    }
 
 
 
