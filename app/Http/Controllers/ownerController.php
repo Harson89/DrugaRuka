@@ -19,22 +19,22 @@ class ownerController extends Controller
 
     //Funkcija za prikaz kategorijeOwner-a
     public function prikazKategorijeOwner($idKategorije){
-        
+
     return view('owner.kategorijeOwner')->with('idKategorije', $idKategorije);
 
  }
 
  //Funkcija za prikaz kategorijeOwner-a
  public function prikazItemaKategorije($imeTrenutneKategorije){
-        
+
     return view('owner.itemiKategorije')->with('idTrenutnePodkategorije', $imeTrenutneKategorije);
 
  }
 
-  //Funkcija za brisanje itema 
-  public function izbrisiItem($item)
+  //Funkcija za brisanje itema
+  public function izbrisiItem($zaIzbrisati)
   {
-   $izbrisiOvaj = item::findOrFail($item);
+   $izbrisiOvaj = item::findOrFail($zaIzbrisati);
    $izbrisiOvaj->delete();
    return view('owner.ownerPage');
   }
