@@ -8,9 +8,9 @@ $maleCategories = App\category::where('gender', 2)->orWhere('gender',0)->get();
   </a>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-
+  <button onclick='window.history.go(-1);' class="list-group-item list-group-item-action bg-light"><- Spol</button>
   @foreach ($maleCategories as $maleCategory)
-    <a class="dropdown-item" href="#">{{$maleCategory->name}}</a>
+    <button onclick='location.href="/itemiKategorijeOpcenito/{{$itemiKategorije = $maleCategory->id}}"' class="dropdown-item" href="#">{{$maleCategory->name}}</button>
     @endforeach
 
   </div>

@@ -46,7 +46,7 @@ if($idKategorije == 2)
       <div class="list-group list-group-flush">
       <button onclick='window.history.go(-1);' class="list-group-item list-group-item-action bg-light"><- Spol</button>
       @foreach($trenutnaKategorija as $imeTrenutneKategorije) 
-        <a onclick='location.href="/itemiKategorije/{{$imeTrenutneKategorije->id}}"' class="list-group-item list-group-item-action bg-light">{{$imeTrenutneKategorije->name}}</a>
+        <button onclick='location.href="/itemiKategorije/{{$imeTrenutneKategorije->id}}"' class="list-group-item list-group-item-action bg-light">{{$imeTrenutneKategorije->name}}</button>
       @endforeach
         
 

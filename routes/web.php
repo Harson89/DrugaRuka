@@ -28,7 +28,6 @@ Route::get('product/{item_id}','productController@showById');
 Route::post('/addToCart', 'productController@addToCart');
 
 
-
 //Route::get('kategorije/{category_id}', 'categoriesController@show');
 
 
@@ -40,16 +39,18 @@ Route::get('/unisex', 'GenderController@unisex')->name('unisex');
 
 //My profile controller
 Route::get('/changePasswordPage','myProfileController@changePasswordPage');
-
 Route::get('/addItem', 'myProfileController@addItem');
-
 Route::get('/myProfile', 'myProfileController@index');
-
 Route::post('/additemExecute', 'myProfileController@addItemExecute');
-
 Route::post('/changePassword', 'myProfileController@changePassword');
-
 Route::get('/changeEmailPage','myProfileController@changeEmailPage');
-
 Route::post('/changeEmail', 'myProfileController@changeEmail');
 
+//ownerController rute
+Route::get('/ownerPage','ownerController@prikazOwnerPage');
+Route::get('/kategorijeOwner/{idKategorije}','ownerController@prikazKategorijeOwner');
+Route::get('/itemiKategorije/{imeTrenutneKategorije}','ownerController@prikazItemaKategorije');
+Route::get('/izbrisi/{zaIzbrisati}','ownerController@izbrisiItem');
+
+//Itemi po kategorijama za sve
+Route::get('/itemiKategorijeOpcenito/{itemiKategorije}','HomeController@itemiPoKategoriji');
