@@ -10,7 +10,7 @@ $femaleCategories = App\category::where('gender', 3)->orWhere('gender',0)->get()
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
   <button onclick='window.history.go(-1);' class="list-group-item list-group-item-action bg-light"><- Spol</button>
   @foreach ($femaleCategories as $femaleCategory)
-    <button onclick='location.href="/itemiKategorijeOpcenito/{{$itemiKategorije = $femaleCategory->id}}"' class="dropdown-item" href="#">{{$femaleCategory->name}}</button>
+    <button onclick='location.href="/itemiKategorijeOpcenito/{{$itemiKategorije = $femaleCategory->gender}}"' class="dropdown-item" href="#">{{$femaleCategory->name}}</button>
     @endforeach
 
   </div>

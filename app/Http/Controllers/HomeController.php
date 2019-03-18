@@ -35,9 +35,9 @@ class HomeController extends Controller
     //Funkcija za ispis itema po kategoriji za sve 
     public function itemiPoKategoriji($itemiKategorije)
     {
-        $items = item::where('category_id' , $itemiKategorije)->get();
-
+        $items = item::where('gender' , $itemiKategorije)->get();
+      
        
-        return view ('itemiKategorije')->with('items',$items);
+        return view ('itemiKategorijeOpcenito')->with('items',$items)->with('itemiKategorije' , $itemiKategorije);
     }
 }

@@ -5,7 +5,7 @@
 
 <div class="row">
 
-@if(count($items)>0)
+
 @foreach($items as $item)
 
 
@@ -30,9 +30,6 @@
 
 
 @endforeach
-@else
-<p> No products yet </p>
-@endif
 
 
 
@@ -41,15 +38,17 @@
 
 <!--Ubaci dropdown menu za iteme-->
 @section('Dropdown')
-<!--
-@if($item->category_id == 2)
+
+
+@if($itemiKategorije == 2)
 @include('layouts.MaleDropDownMenu')
-@if($item->category_id == 3)
+@elseif($itemiKategorije == 3)
 @include('layouts.FemaleDropDownMenu')
-@if($item->category_id == 4)
+@elseif($itemiKategorije == 4)
 @include('layouts.ChildDropDownMenu')
-@if($item->category_id == 1)
+@elseif($itemiKategorije == 1)
 @include('layouts.UnisexDropDownMenu')
 @endif
--->
+
+
 @endsection
