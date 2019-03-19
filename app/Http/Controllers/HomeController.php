@@ -31,13 +31,12 @@ class HomeController extends Controller
         return view('home')->with('items',$items);
     }
 
+     //Funkcija za ispis itema po kategoriji za sve
+     public function itemiPoKategoriji($itemiKategorije)
+     {
+         $items = item::where('gender' , $itemiKategorije)->get();
 
-    //Funkcija za ispis itema po kategoriji za sve 
-    public function itemiPoKategoriji($itemiKategorije)
-    {
-        $items = item::where('gender' , $itemiKategorije)->get();
-      
-       
-        return view ('itemiKategorijeOpcenito')->with('items',$items)->with('itemiKategorije' , $itemiKategorije);
-    }
-}
+
+         return view ('itemiKategorijeOpcenito')->with('items',$items)->with('itemiKategorije' , $itemiKategorije);
+     }
+ }
