@@ -10,10 +10,10 @@
 
 
 <?php
-$items = App\item::where('gender', 2)->get();
+$items = App\item::where('gender', 2)->orWhere('gender',0)->get();
 ?>
 
-@section('item')
+@section('items')
 
 <div class="row">
 
