@@ -6,8 +6,12 @@
 <!--Edit password-->
 <button onclick='location.href="/changePasswordPage"' class="btn btn-primary">Promjeni password </button>
 
+
 <!--Edit email-->
 <button onclick='location.href="/changeEmailPage"' class="btn btn-primary">Promjeni email</button>
+
+<!--Support-->
+<button onclick='location.href="/sendMessage"' class="btn btn-primary">Pošalji poruku </button>
 
 
 <?php

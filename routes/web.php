@@ -68,9 +68,14 @@ Route::get('/izbrisi/{zaIzbrisati}','ownerController@izbrisiItem');
 
 //cart routes
 Route::get('/myCart', 'cartController@index');
-
 Route::get('/buyAll', 'cartController@buyAll');
-
 Route::post('/buyAllExecute', 'cartController@buyAllExecute');
 
+
+//Support funkcije
+Route::get('/sendMessage', function () {
+    return view('myProfile.sendMessage');
+});
+
+Route::post('/posalji','SupportController@posaljiPoruku');
 
