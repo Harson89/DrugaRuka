@@ -95,10 +95,6 @@ class productController extends Controller
                 //dodaje u korpu kolicinu itema koji su naruceni
                 $orders_item->quantityXXXL = $productQuantity;
 
-                //smanjit broj tog itema na stanju u item tabeli
-                $changedItem = item::find($product_id);
-                $changedItem->XXXLQuantity -= $productQuantity;
-                $changedItem->save();
 
                 //poruka da je item dodan u korpu
                 $message= 'You successfully added item to your cart';
@@ -116,10 +112,6 @@ class productController extends Controller
                 //dodaje u korpu kolicinu itema koji su naruceni
                 $orders_item->quantityXXL = $productQuantity;
 
-                //smanjit broj tog itema na stanju u item tabeli
-                $changedItem = item::find($product_id);
-                $changedItem->XXLQuantity -= $productQuantity;
-                $changedItem->save();
 
                 //poruka da je item dodan u korpu
                 $message= 'You successfully added item to your cart';
@@ -137,10 +129,6 @@ class productController extends Controller
                 //dodaje u korpu kolicinu itema koji su naruceni
                 $orders_item->quantityXL = $productQuantity;
 
-                //smanjit broj tog itema na stanju u item tabeli
-                $changedItem = item::find($product_id);
-                $changedItem->XLQuantity -= $productQuantity;
-                $changedItem->save();
 
                 //poruka da je item dodan u korpu
                 $message= 'You successfully added item to your cart';
@@ -159,10 +147,6 @@ class productController extends Controller
                 //dodaje u korpu kolicinu itema koji su naruceni
                 $orders_item->quantityL = $productQuantity;
 
-                //smanjit broj tog itema na stanju u item tabeli
-                $changedItem = item::find($product_id);
-                $changedItem->LQuantity -= $productQuantity;
-                $changedItem->save();
 
                 //poruka da je item dodan u korpu
                 $message= 'You successfully added item to your cart';
@@ -180,10 +164,6 @@ class productController extends Controller
                 //dodaje u korpu kolicinu itema koji su naruceni
                 $orders_item->quantityM = $productQuantity;
 
-                //smanjit broj tog itema na stanju u item tabeli
-                $changedItem = item::find($product_id);
-                $changedItem->MQuantity -= $productQuantity;
-                $changedItem->save();
 
                 //poruka da je item dodan u korpu
                 $message= 'You successfully added item to your cart';
@@ -201,10 +181,6 @@ class productController extends Controller
                 //dodaje u korpu kolicinu itema koji su naruceni
                 $orders_item->quantityS = $productQuantity;
 
-                //smanjit broj tog itema na stanju u item tabeli
-                $changedItem = item::find($product_id);
-                $changedItem->SQuantity -= $productQuantity;
-                $changedItem->save();
 
                 //poruka da je item dodan u korpu
                 $message= 'You successfully added item to your cart';
@@ -222,10 +198,6 @@ class productController extends Controller
                 //dodaje u korpu kolicinu itema koji su naruceni
                 $orders_item->quantityXS = $productQuantity;
 
-                //smanjit broj tog itema na stanju u item tabeli
-                $changedItem = item::find($product_id);
-                $changedItem->XSQuantity -= $productQuantity;
-                $changedItem->save();
 
                 //poruka da je item dodan u korpu
                 $message= 'You successfully added item to your cart';

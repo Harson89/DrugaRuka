@@ -53,7 +53,7 @@ class cartController extends Controller
         ])->first();
 
         //poslano
-        $order->shipped = 'yes';
+        $order->shipped = 'no';
         $order->firstName = $request->input('firstName');
         $order->lastName = $request->input('lastName');
         $order->finished = 0;

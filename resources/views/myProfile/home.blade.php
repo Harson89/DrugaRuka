@@ -23,6 +23,9 @@ $tipUsera = Auth::user()->role;
 <!--Add new item button-->
 <button onclick='location.href="/addItem"' class="btn btn-primary"> Add Item </button>
 
+<!--Add new item button-->
+<button onclick='location.href="/shipItems"' class="btn btn-primary"> Items to ship </button>
+
 @endif
 
 @endsection

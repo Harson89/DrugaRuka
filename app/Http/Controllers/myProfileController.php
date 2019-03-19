@@ -113,23 +113,24 @@ class myProfileController extends Controller
 
           $stariMail = Auth::User()->email;
 
- //PROVJERA DA LI JE NOVI MAIL ISTI KAO PREDHODNI
- if(strcmp($request->get($stariMail), $request->get('noviMail')) == 0 ){
-    return redirect()->back()->with("error", "Unijeli ste stari mail");
-}
+            //PROVJERA DA LI JE NOVI MAIL ISTI KAO PREDHODNI
+            if(strcmp($request->get($stariMail), $request->get('noviMail')) == 0 ){
+                return redirect()->back()->with("error", "Unijeli ste stari mail");
+            }
 
- //PROVJERA DA LI JE PRAVILNO POTVRDNO UPISAO MAILOVE
- if(($request->get('noviMail')) != ($request->get('confirmMail'))){
-    return redirect()->back()->with("error","Pravilno upisite mailove u polja novih mailova");
-}
+            //PROVJERA DA LI JE PRAVILNO POTVRDNO UPISAO MAILOVE
+            if(($request->get('noviMail')) != ($request->get('confirmMail'))){
+                return redirect()->back()->with("error","Pravilno upisite mailove u polja novih mailova");
+            }
 
-  // PROMJENA MAILA
-  $user = Auth::user();
-  $user->email = ($request->get('noviMail'));
-  $user->save();
+            // PROMJENA MAILA
+            $user = Auth::user();
+            $user->email = ($request->get('noviMail'));
+            $user->save();
 
-  return redirect('/home');
+            return redirect('/home');
 
       }
+
 
 }

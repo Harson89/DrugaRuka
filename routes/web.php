@@ -51,6 +51,9 @@ Route::get('/ownerPage','ownerController@prikazOwnerPage');
 Route::get('/kategorijeOwner/{idKategorije}','ownerController@prikazKategorijeOwner');
 Route::get('/itemiKategorije/{imeTrenutneKategorije}','ownerController@prikazItemaKategorije');
 Route::get('/izbrisi/{zaIzbrisati}','ownerController@izbrisiItem');
+Route::get('/shipItems', 'ownerController@displayOrders');
+
+Route::post('/shipitemsExecute', 'ownerController@shipItemsExecute');
 
 //Itemi po kategorijama za sve
 Route::get('/itemiKategorijeOpcenito/{itemiKategorije}','HomeController@itemiPoKategoriji');
@@ -69,3 +72,5 @@ Route::get('/myCart', 'cartController@index');
 Route::get('/buyAll', 'cartController@buyAll');
 
 Route::post('/buyAllExecute', 'cartController@buyAllExecute');
+
+
