@@ -16,11 +16,6 @@
 
 }
 
-.card-body:hover{
-    background-color: #778899;
-    color:white;
-}
-
 #usredini{
     text-align: center;
     margin-right: 25%;
@@ -78,4 +73,10 @@
     border: 1px solid black;
     margin-right: 25%;
     margin-left: 25%;
+}
+
+
+
+.embed-responsive {
+    object-fit: cover;
 }
