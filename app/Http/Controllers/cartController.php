@@ -70,5 +70,12 @@ class cartController extends Controller
 
     }
 
+    //remove item
+    public function removeItem(Request $request){
+
+        $order_item = orders_item::where('item_id',$request->input('item_id'));
+        $order_item->delete();
+        return redirect()->back();
+    }
 
 }

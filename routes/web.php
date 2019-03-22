@@ -24,11 +24,9 @@ Route::get('/about', 'AboutController@about')->name('about');
 //prikaz samo jednog produkta
 Route::get('product/{item_id}','productController@showById');
 
-//ADD TO CART
+//CART
 Route::post('/addToCart', 'productController@addToCart');
-
-
-//Route::get('kategorije/{category_id}', 'categoriesController@show');
+Route::post('//removeItemFromCart', 'cartController@removeItem');
 
 
 //Rute za ispis gender stranica

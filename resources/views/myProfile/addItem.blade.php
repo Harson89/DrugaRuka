@@ -3,7 +3,9 @@
 @section('content')
 
 <?php
-    $categories = App\category::all();
+
+$selectedGenderID = 0;
+
 ?>
 
 
@@ -29,7 +31,7 @@
 
 <div id="usredini">
     <!--FORM -->
-    <form action="{{ URL::to('additemExecute') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ URL::to('additemExecute') }}" method="post" enctype="multipart/form-data" >
 
 
     {{ csrf_field() }}
@@ -39,28 +41,155 @@
 
     <!-- description -->
     {{Form::textarea('description','', ['required'=>'required','class' => 'text-center form-control', 'placeholder'=>'Description', 'rows'=>'3', 'cols'=>'2'] )}}
-
-    <!-- CATEGORY ID -->
-    <select class="form-control" name="category_id">
-        @foreach ($categories as $category)
-            <option value ={{$category->id}}> {{$category->name}} </option>
-        @endforeach
+<br>
+        <!-- GENDER -->
+        <select onchange="getGender()" class="form-control" name="gender" id="genderSelect" >
+            <option selected disabled hidden value=0> Choose Gender </option>
+            <option  value=1 > unisex </option>
+            <option value=2 > male </option>
+            <option value=3 > female </option>
+            <option value=4 > kids </option>
     </select>
     <br>
+
+
+    <!-- assign CATEGORIES for each GENDER -->
+
+    <?php
+        $unisexCategories = App\category::where('gender',1)->get();
+        $maleCategories = App\category::where('gender',2)->get();
+        $femaleCategories = App\category::where('gender',3)->get();
+        $kidsCategories = App\category::where('gender',4)->get();
+
+        foreach($unisexCategories as $unisexCategory){
+            echo $unisexCategory->name;
+            $test = $unisexCategory->name;
+        }
+    ?>
+
+
+    <!-- get gender to display right categories -->
+    <script type='text/javascript'>
+        function getGender(){
+            var model=$('#genderSelect').val();
+           //alert(model);
+
+            //dodavanje u formu
+            /* var genderCategories = document.getElementById("categoriesFromGender");
+            var option = document.createElement("option");
+            option.text = "TEST";
+            genderCategories.add(option); */
+
+            // ----------------------------------------------------
+
+
+            //ukloniti sve kategorije
+            $('#categoriesFromGender').empty();
+
+
+
+
+            //dodat kategorije za unisex
+            if(model == 1){
+
+                <?php
+                    foreach($unisexCategories as $unisexCategory){
+                ?>
+
+                    var genderCategories = document.getElementById("categoriesFromGender");
+                    var option = document.createElement("option");
+                    option.value =" <?php echo $unisexCategory->id; ?> ";
+                    option.text =" <?php echo $unisexCategory->name ?> ";
+                    genderCategories.add(option);
+
+
+                <?php
+                    }
+                ?>
+              //MALE
+            } else if(model == 2){
+
+                <?php
+                    foreach($maleCategories as $maleCategory){
+                ?>
+
+                    var genderCategories = document.getElementById("categoriesFromGender");
+                    var option = document.createElement("option");
+                    option.value =" <?php echo $maleCategory->id; ?> ";
+                    option.text =" <?php echo $maleCategory->name ?> ";
+                    genderCategories.add(option);
+
+
+                <?php
+                    }
+                ?>
+              //FEMALE
+            } else if(model == 3){
+
+                <?php
+                    foreach($femaleCategories as $femaleCategory){
+                ?>
+
+                    var genderCategories = document.getElementById("categoriesFromGender");
+                    var option = document.createElement("option");
+                    option.value =" <?php echo $femaleCategory->id; ?> ";
+                    option.text =" <?php echo $femaleCategory->name ?> ";
+                    genderCategories.add(option);
+
+
+                <?php
+                    }
+                ?>
+              //KIDS
+            } else if(model == 4){
+
+                <?php
+                    foreach($kidsCategories as $kidsCategory){
+                ?>
+
+                    var genderCategories = document.getElementById("categoriesFromGender");
+                    var option = document.createElement("option");
+                    option.value =" <?php echo $kidsCategory->id; ?> ";
+                    option.text =" <?php echo $kidsCategory->name ?> ";
+                    genderCategories.add(option);
+
+
+                <?php
+                    }
+                ?>
+
+
+            }
+
+
+
+
+     }
+     </script>
+
+    <?php
+        $categories = App\category::where('gender',$selectedGenderID)->get();
+    ?>
+
+
+
+
+
+
+    <!-- CATEGORY ID -->
+    <select required="required" id="categoriesFromGender" class="form-control" name="category_id">
+
+    </select>
+    <br>
+
+
+
     <!-- price -->
     <span> Price </span>
     {!! Form::number('price', '0.0', ['required'=>'required','min' => '0.01', 'step'=>'any', 'class' => 'text-center form-control']) !!}
     <br>
     <br>
-    <!-- GENDER -->
-    <select class="form-control" name="gender">
-            <option value=1 > unisex </option>
-            <option value=2 > male </option>
-            <option value=3 > female </option>
-            <option value=4 > kids </option>
-    </select>
 
-    <br>
 
     <!-- XXXL -->
         <span> XXXL QUANTITY </span>
@@ -101,7 +230,7 @@
     <!-- picture upload -->
     <div class="form-control">
         <label for="author">Picture:</label>
-        <input type="file" name="file" id="file">
+        <input type="file" name="file" id="file" required="required">
     </div>
     <br>
 
