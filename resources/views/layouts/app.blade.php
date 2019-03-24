@@ -29,7 +29,7 @@
 
     @yield('Dropdown')
 
-      <a class="navbar-brand" href="{{ url('/') }}">Druga Ruka</a>
+      <a class="navbar-brand" href="{{ url('/') }}"><span class="naslov">Druga Ruka</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

@@ -10723,6 +10723,20 @@ a.text-dark:focus {
   text-align: center;
 }
 
+.btn btn-secondary btn-lg btn-block {
+  width: 50%;
+}
+
+.dropdown-menu {
+  border-radius: 8px;
+}
+
+.naslov {
+  font-weight: bold;
+  font-size: 15pt;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
