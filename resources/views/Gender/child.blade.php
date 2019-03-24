@@ -4,7 +4,7 @@
 <!--Ubaci dropdown menu za kategorije-->
 @section('Dropdown')
 
-@include('layouts.MaleDropDownMenu')
+@include('layouts.ChildDropDownMenu')
 
 @endsection
 
