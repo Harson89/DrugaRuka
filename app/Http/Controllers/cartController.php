@@ -53,7 +53,7 @@ class cartController extends Controller
         ])->first();
 
         //poslano
-        $order->shipped = 'yes';
+        $order->shipped = 'no';
         $order->firstName = $request->input('firstName');
         $order->lastName = $request->input('lastName');
         $order->finished = 0;
@@ -70,5 +70,12 @@ class cartController extends Controller
 
     }
 
+    //remove item
+    public function removeItem(Request $request){
+
+        $order_item = orders_item::where('item_id',$request->input('item_id'));
+        $order_item->delete();
+        return redirect()->back();
+    }
 
 }

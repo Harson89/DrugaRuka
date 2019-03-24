@@ -10671,11 +10671,6 @@ a.text-dark:focus {
   text-align: center;
 }
 
-.card-body:hover {
-  background-color: #778899;
-  color: white;
-}
-
 #usredini {
   text-align: center;
   margin-right: 25%;
@@ -10735,6 +10730,22 @@ a.text-dark:focus {
   font-weight: bold;
   font-size: 15pt;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#order {
+  border: 1px solid black;
+  margin-bottom: 5%;
+}
+
+#itemsInOrders {
+  border: 1px solid black;
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
+.embed-responsive {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .navbar-laravel {

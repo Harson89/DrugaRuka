@@ -15,4 +15,3 @@ $childCategories = App\category::where('gender', 4)->orWhere('gender',0)->get();
 
   </div>
 </div>
-

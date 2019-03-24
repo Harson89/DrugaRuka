@@ -111,9 +111,15 @@
                     {{$velicina}}
                 </td>
 
-                <!-- UREDU KORISNIKA -->
+                <!-- Ukloni item iz narudzbe -->
                 <td style="float:right;">
-                    <button class="btn btn-primary"> remove </button>
+                    {{ Form::open(array('url' => '/removeItemFromCart')) }}
+
+                    <input name="item_id" value="{{$item->id}}" type="hidden">
+
+                    {{Form::submit('remove',['class'=>'btn btn-primary'])}}
+
+    {{ Form::close() }}
                 </td>
             </tr>
 
@@ -125,8 +131,9 @@
 
 <div id="global">
     <p> Total Price : {{$allPrice}} € </p>
-
+    @if($allPrice>0)
     <button class="btn btn-primary" onclick="location.href='/buyAll';" > Buy All </button>
+    @endif
 </div>
 
 @endif

@@ -15,4 +15,3 @@ $unisexCategories = App\category::where('gender', 1)->orWhere('gender',0)->get()
 
   </div>
 </div>
-

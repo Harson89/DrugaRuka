@@ -41,6 +41,7 @@
 
 
     <p>
+
         @if($product->gender == 1)
             Gender: Unisex
         @endif

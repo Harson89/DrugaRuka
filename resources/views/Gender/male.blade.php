@@ -29,13 +29,13 @@ $items = App\item::where('gender', 2)->orWhere('gender',0)->get();
           <a  href="#">{{$item->name}}</a>
         </h4>
 
-      </div>
+    </div>
 
-      <div class="card-footer">
-            <h5 class="cijena">{{$item->price}}€</h5>
-      </div>
+    <div class="card-footer">
+          <h5 class="cijena">{{$item->price}}€</h5>
     </div>
   </div>
+</div>
 
 <br>
 <br>

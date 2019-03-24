@@ -15,4 +15,3 @@ $femaleCategories = App\category::where('gender', 3)->orWhere('gender',0)->get()
 
   </div>
 </div>
-
