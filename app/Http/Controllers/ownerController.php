@@ -32,11 +32,18 @@ class ownerController extends Controller
 
  }
 
-  //Funkcija za brisanje itema
+  //Funkcija za brisanje itema -- Tacnije setuje sve velicine na nulu kako se ne bi moglo prikazati
   public function izbrisiItem($zaIzbrisati)
   {
-   $izbrisiOvaj = item::findOrFail($zaIzbrisati);
-   $izbrisiOvaj->delete();
+   $izbrisiOvaj = item::find($zaIzbrisati);
+   $izbrisiOvaj->XXXLQuantity = 0;
+   $izbrisiOvaj->XXLQuantity = 0;
+   $izbrisiOvaj->XLQuantity = 0;
+   $izbrisiOvaj->LQuantity = 0;
+   $izbrisiOvaj->MQuantity = 0;
+   $izbrisiOvaj->SQuantity = 0;
+   $izbrisiOvaj->XSQuantity = 0;
+   $izbrisiOvaj->save();
    return view('owner.ownerPage');
   }
 
