@@ -8,7 +8,8 @@
 <div class="col-lg-12">
 
     <?php
-        $items = App\item::all();
+        $items = App\item::where('XXXLQuantity', '!=', '0')->orWhere('XXLQuantity', '!=', '0')->orWhere('XLQuantity', '!=', '0')->orWhere('LQuantity', '!=', '0')
+                            ->orWhere('MQuantity', '!=', '0')->orWhere('SQuantity', '!=', '0')->orWhere('XSQuantity', '!=', '0')->get();
     ?>
 
 
