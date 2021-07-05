@@ -13,4 +13,10 @@ class order extends Model
     public function User() {
       return $this->belongsTo(User::class);
   }
+
+    //connnection to ORDER_ITEMS
+    public function orders_item() {
+    return $this->hasMany(orders_item::class);
+    }
+
 }

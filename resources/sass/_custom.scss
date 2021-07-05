@@ -1,0 +1,98 @@
+#sadrzaj{
+    padding-top:1%;
+}
+
+.cijena{
+    text-align: center;
+}
+
+.card-title{
+    text-align: center;
+}
+
+
+.list-group{
+    text-align: center;
+
+}
+
+#usredini{
+    text-align: center;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+#inputPrice{
+    width: 25%;
+    text-align: center;
+    display:inline-block
+}
+
+#desni{
+    width: 40%;
+    float: right;
+    margin-right: 10%;
+    padding-left: 4%;
+}
+
+
+#lijevi{
+    width: 40%;
+    float: left;
+    margin-left: 10%;
+}
+
+#slikaProdukta{
+    float:right;
+    width: 80%;
+    border: 3px solid black;
+}
+
+#imeProdukta{
+    text-align: center;
+    width: 100%;
+    font-size: 150%;
+}
+
+#cartTable{
+    width: 70%;
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
+#global{
+    text-align: center;
+}
+
+
+.btn btn-secondary btn-lg btn-block {
+   width:50%;
+}
+
+.dropdown-menu {
+    border-radius: 8px;
+}
+
+
+.naslov {
+    font-weight: bold;
+    font-size: 15pt;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#order{
+    border: 1px solid black;
+    margin-bottom: 5%;
+}
+
+#itemsInOrders{
+    border: 1px solid black;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+
+
+.embed-responsive {
+    object-fit: cover;
+}
